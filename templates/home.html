@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{%block title%}
+
+{% if title %}
+    <title >{{title}}</title>
+    
+
+{% else %}
+    <title>blog</title>
+{% endif %}
+
+{%endblock title%}
+
+
+
+{%block layer%}
+<div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+    <a href="{{url_for('addblog')}}">
+        <button type="button" style="margin:20px;" class="btn btn-primary" >+</button>
+    </a>
+</div>
+{%for blog in blog_data%}
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{blog[1]}}</h4>
+            <p class="card-text"> {{blog[2]}}</p>
+        </div>
+    </div>
+    </br>
+{% endfor %}
+{%endblock layer%}

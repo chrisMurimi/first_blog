@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{%block title%}
+
+{% if title %}
+    <title >{{title}}</title>
+{% else %}
+    <title>blog</title>
+{% endif %}
+
+{%endblock title%}
+
+{%block layer%}
+
+            <form action="{{url_for('addblog')}}" method="POST">
+                    <div class="form-group">
+                        <label for="title" style="margin-top:20px;">title</label>
+                        <input type="text" name="title" class="form-control" style="margin-bottom:20px;" id="title" placeholder="title">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="content">Add content</label>
+                        <textarea type="text" name="content" class="form-control" id="content" placeholder="Add content" rows="3"></textarea>
+                    </div>
+                    <br>
+
+                    <input type = "submit" value = "submit" /><br>
+
+            </form>
+            
+{%endblock layer%}
+
+

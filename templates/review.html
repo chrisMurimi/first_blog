@@ -1,0 +1,17 @@
+{%extends "layout.html"%}
+{%block title%}
+{% if title %}
+    <title>{{title}}</title>
+{% else %}
+    <title>blog</title>
+{% endif %}
+</head>
+{%endblock title%}
+
+{%block layer%}
+{%for review in reviews%}
+    <h1>{{review.title}}</h1>
+    <p>{{review.content}}</p>
+    <h3> posted on {{review.date}} by {{review.postedby}}</h3>
+{% endfor %}
+{%endblock layer%}
